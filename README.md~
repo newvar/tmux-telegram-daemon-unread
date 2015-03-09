@@ -5,7 +5,7 @@ The main difference from the https://github.com/newvar/tmux-telegram-unread is t
 or with the defined port (we look at 2391 by default):
 
 ```sh
-$ telegram-cli -P 2391
+        $ telegram-cli -P 2391
 ```sh
 
 It fixes a TG CLI bug with stolen new messages. We use netcat to get info.
@@ -14,9 +14,7 @@ It fixes a TG CLI bug with stolen new messages. We use netcat to get info.
 
 #{telegram_d_unread} in status bar, as example:
 
-```sh
-set -g status-right "#[fg=colour39]Tg: #{telegram_d_unread} #[fg=yellow] | %a %d-%h-%y %H:%M "
-```sh
+        set -g status-right "#[fg=colour39]Tg: #{telegram_d_unread} #[fg=yellow] | %a %d-%h-%y %H:%M "
 
 ### Configuration
 
