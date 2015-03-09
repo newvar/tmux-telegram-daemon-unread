@@ -10,7 +10,7 @@ It fixes a TG CLI bug with stolen new messages. We use netcat to get info.
 
 ### Usage
 
-#{telegram_d_unread} in status bar, as example:
+Put #{telegram_d_unread} in status bar, as example:
 
         set -g status-right "#[fg=colour39]Tg: #{telegram_d_unread} #[fg=yellow] | %a %d-%h-%y %H:%M "
 
