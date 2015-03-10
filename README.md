@@ -29,7 +29,7 @@ Configuration is not required, but you can specify the port of telegram-cli inst
 ### Dependecies
 
 Depends on
-* Telegram CLI https://github.com/vysheng/tg
+* [Telegram CLI](https://github.com/vysheng/tg)
 * nc (netcat)
 
 Update time depends on status-interval option
