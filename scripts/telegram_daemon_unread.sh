@@ -12,7 +12,7 @@ print_telegram_daemon_unread() {
 	if [ -z "$tgList" ]; then
         echo "No Telegram at $port"
     else
-        echo $tgList | grep -c '[1-9][0-9]* unread'
+        echo "${tgList}" | grep -c '[1-9][0-9]* unread'
 	fi
 }
 
