@@ -13,16 +13,25 @@ You able to use [Tmux Telegram Pager](https://github.com/newvar/tmux-telegram-pa
 
 ### Usage
 
-- Put #{telegram_dialogs_unread} in status bar to get the number of unread dialogs
-- Put #{telegram_messsages_unread} in status bar to get the sum of unread messages
+Put #{telegram_unread} in status bar to get the plugin message
 
 Example:
 
-        set -g status-right "#[fg=colour39]Tg: #{telegram_dialogs_unread} : #{telegram_messsages_unread} #[fg=yellow] | %a %d-%h-%y %H:%M "
+        set -g status-right "#[fg=colour39]Tg: #{telegram_unread} #[fg=yellow] | %a %d-%h-%y %H:%M "
 
 ### Configuration
 
-Configuration is not required, but you can specify the port of telegram-cli instance and netcat timeout.
+You can configure plugin messages format, specify the port of telegram-cli instance and netcat timeout.
+
+- Set plugin message format in `.tmux.conf`:
+
+        set -g @telegram-unread-message "@telegram_dialogs_unread : @telegram_messages_unread"
+
+Params names say for themseves
+
+- You can set shorter message string for unavailable TG CLI at the defined port ("No Telegram at @port" is by default)
+
+        set -g @telegram-no-daemon-message 'no tg'
 
 - Set telegram-cli port with the setting in `.tmux.conf`:
 
@@ -31,10 +40,6 @@ Configuration is not required, but you can specify the port of telegram-cli inst
 - Set netcat connection timeout (in seconds). Try it only if something doesn't work:
 
         set -g @telegram-daemon-timeout '1'
-
-- Set message string for unavailable TG CLI at the defined port
-
-        set -g @telegram-no-daemon-message 'x'
 
 ### Dependecies
 

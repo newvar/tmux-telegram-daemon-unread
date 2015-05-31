@@ -9,4 +9,8 @@ telegram_daemon_default_timeout="1"
 #Status message for unexisting tg daemon
 telegram_no_daemon_message="@telegram-no-daemon-message"
 # Default status message for unexisting tg daemon
-telegram_default_no_daemon_message="x"
+telegram_default_no_daemon_message="No Telegram at @port"
+#Status message for unexisting tg daemon
+telegram_unread_message="@telegram-unread-message"
+# Default status message for unexisting tg daemon
+telegram_default_unread_message="@telegram_dialogs_unread : @telegram_messages_unread"
