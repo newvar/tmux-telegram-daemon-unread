@@ -1,4 +1,5 @@
 # Tmux Telegram Unread
+
 Tmux plugin to show telegram unread dialogs count in status bar as a widget.
 
 The main difference from the https://github.com/newvar/tmux-telegram-unread is that the telegram-cli have to be started as a daemon (https://github.com/vysheng/tg/wiki/Running-as-daemon)
@@ -8,11 +9,16 @@ or with the defined port (we look at 2391 by default):
 
 It fixes a TG CLI bug with stolen new messages. We use netcat to get info.
 
+You able to use [Tmux Telegram Pager](https://github.com/newvar/tmux-telegram-pager) instead of TG CLI daemon.
+
 ### Usage
 
-Put #{telegram_d_unread} in status bar, as example:
+- Put #{telegram_dialogs_unread} in status bar to get the number of unread dialogs
+- Put #{telegram_messsages_unread} in status bar to get the sum of unread messages
 
-        set -g status-right "#[fg=colour39]Tg: #{telegram_d_unread} #[fg=yellow] | %a %d-%h-%y %H:%M "
+Example:
+
+        set -g status-right "#[fg=colour39]Tg: #{telegram_dialogs_unread} : #{telegram_messsages_unread} #[fg=yellow] | %a %d-%h-%y %H:%M "
 
 ### Configuration
 
@@ -25,6 +31,10 @@ Configuration is not required, but you can specify the port of telegram-cli inst
 - Set netcat connection timeout (in seconds). Try it only if something doesn't work:
 
         set -g @telegram-daemon-timeout '1'
+
+- Set message string for unavailable TG CLI at the defined port
+
+        set -g @telegram-no-daemon-message 'x'
 
 ### Dependecies
 
@@ -64,5 +74,7 @@ Reload TMUX environment:
 You should now be able to use the plugin.
 
 # License
+
+Inspired by [Tmux CPU Plugin](https://github.com/tmux-plugins/tmux-cpu)
 
 MIT
